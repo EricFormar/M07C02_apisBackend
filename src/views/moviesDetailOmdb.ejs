@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %> </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <h1><%= movie.Title %> </h1>    
+    <br>
+    <% if (movie.Response == 'True') { %>
+        <figure>
+            <img src="<%= movie.Poster %>" alt="<%= movie.Title %>">
+        </figure>
+        
+        <p>AÑO: <%= movie.Year %> </p>
+        <p>PREMIOS: <%= movie.Awards %> </p>
+        <p>DURACIÓN: <%= movie.Runtime%> </p>
+    
+    <% }else{ %>
+        <p>NO HAY RESULTADOS PARA LA BÚSQUEDA DE: <%= busqueda.toUpperCase() %> </p> 
+    <% } %> 
+    <br>
+    <a href="/movies">Volver a lista de películas</a>
+
+</body>
+</html>
